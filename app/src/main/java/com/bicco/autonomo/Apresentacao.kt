@@ -24,6 +24,6 @@ class Apresentacao : AppCompatActivity() {
         botao_registrar.setOnClickListener(){
         var intent = Intent(this, FormRegistrar::class.java)
         startActivity(intent)
-
+//olá
     }}
 }
