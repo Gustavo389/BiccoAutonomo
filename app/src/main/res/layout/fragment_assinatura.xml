@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/assinatura_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/plano_padrao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/box_assinatura_contorno"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plano Padrão"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotobold"
+            android:text="Plano padrão de assinatura provida ao usuário. É divulgado o número padrão
+de anúncios do autonômo. Para uma pessoa descobrir seu serviço é preciso que ela pesquise na categoria em que se
+encontra seu serviço ou digite seu nome de perfil para encontrá-lo. Para ter mais divulgação nesse plano é preciso
+ ter uma boa média de avaliações (como 4 estrelas ou mais)." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custo: Gratuito"
+            android:textStyle="italic"
+            android:fontFamily="@font/opensansbold"
+            android:textColor="@color/green" />
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/assinatura_button_shape_owned"
+            android:fontFamily="@font/robotobold"
+            android:text="Já Adquirido"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/plano_premium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/plano_padrao"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/box_assinatura_contorno"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotobold"
+            android:text="Plano Premium"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotobold"
+            android:text="Plano de assinatura pago. Tem como objetivo dar ao autonômo uma maior visibilidade na tela inicial e nas pesquisas dos clientes. (Exemplo: Um cliente pesquisa a respeito de um serviço relacionado de mesma categoria do serviço que o autonômo publicou, portanto o anúncio será promovido para os primeiros da pesquisa, estará atrás apenas de quem tiver uma maior avaliação e possuir o plano premium, logo depois virá os anúncios de quem faz parte do plano padrão)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custo: R$ 29,99 por mês"
+            android:textStyle="italic"
+            android:fontFamily="@font/opensansbold"
+            android:textColor="@color/green"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/assinatura_button_shape_notowned"
+            android:fontFamily="@font/robotobold"
+            android:text="Adquirir"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

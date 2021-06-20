@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Tela Inicial"
+            />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_perfil"
+            android:title="Perfil" />
+
+
+        <item
+            android:id="@+id/nav_anuncios"
+            android:icon="@drawable/ic_anuncios"
+            android:title="Anuncios" />
+
+        <item
+            android:id="@+id/nav_assinatura"
+            android:icon="@drawable/ic_assinatura"
+            android:title="Assinatura" />
+
+        <item
+            android:id="@+id/nav_notificacoes"
+            android:icon="@drawable/ic_notificacoes"
+            android:title="Notificações" />
+
+        <item
+            android:id="@+id/nav_deslogar"
+            android:icon="@drawable/ic_deslogar"
+            android:title="Encerrar sessão" />
+    </group>
+</menu>
