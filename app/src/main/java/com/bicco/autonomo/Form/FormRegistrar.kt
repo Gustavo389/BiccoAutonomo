@@ -12,11 +12,16 @@ class FormRegistrar : AppCompatActivity() {
         val binding = ActivityFormRegistrarBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
         var edt_register_email = binding.editEmailRegister
         var edt_register_senha = binding.editSenhaRegister
         var btt_register = binding.bttRegistrar
         var text_login = binding.textTelaLogin
+        var edt_date = binding.editTextDate
+        var edt_cpf = binding.edtCpf
+        var edt_telefone = binding.edtNumeroTel
+        var box_list_profissoes = binding.listaProfissoes
+
+        val sizeArray = 4
 
         text_login.setOnClickListener() {
             var intent = Intent(this, FormLogin::class.java)
@@ -26,4 +31,13 @@ class FormRegistrar : AppCompatActivity() {
 
 
     }
+
+    private fun Array(size: Int): Any {
+        TODO("Not yet implemented")
+    }
+
+}
+
+private operator fun Any.compareTo(i: Int): Int {
+    TODO("Not yet implemented")
 }

@@ -1,10 +1,11 @@
 package com.bicco.autonomo.Form
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bicco.autonomo.databinding.ActivityFormLoginBinding
 import com.example.abalateral.MainBcc
+import pacotebicco.fazerLogin
 
 class FormLogin : AppCompatActivity() {
 
@@ -24,11 +25,23 @@ class FormLogin : AppCompatActivity() {
             finish()
         }
         btt_login.setOnClickListener() {
-            var intent = Intent(this, MainBcc::class.java)
-            startActivity(intent)
-            finish()
-        }
+            val Id = fazerLogin.login(
+                "https://bicco-api.herokuapp.com/login/autonomo",
+                "$edt_email",
+                "$edt_senha"
+            )
+            if (Id != 0) {
+                println("-----------")
+                println("Bem vindo")
+                var intent = Intent(this, MainBcc::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                println("algo de errado nao esta certo")
+            }
 
+
+        }
 
 
     }
