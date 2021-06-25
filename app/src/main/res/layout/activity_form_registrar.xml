@@ -1,169 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
+    android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".Form.FormLogin">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:layout_marginTop="0dp"
-        android:background="@drawable/background_theme_bcc">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/imstorydf"
-            android:gravity="center"
-            android:text="Registro"
-            android:textColor="@color/white"
-            android:textSize="56sp"
-            android:textStyle="bold"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/background_theme_bcc"
+                android:fontFamily="@font/imstorydf"
+                android:gravity="center"
+                android:text="Registro"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="56sp"
+                android:textStyle="bold"
 
 
-            />
+                />
+            <EditText
+                android:id="@+id/edt_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_text_email"
+                android:hint="Nome"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+
+                />
+            <EditText
+                android:id="@+id/edit_email_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_text_email"
+                android:drawableRight="@drawable/ic_email"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+
+                />
+
+            <EditText
+                android:id="@+id/edit_senha_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_text_email"
+                android:drawableRight="@drawable/ic_vpn_key"
+                android:hint="Senha"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+
+
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="236dp"
+                    android:layout_height="43dp"
+
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="159dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="Aperte para inserir a Data de Nascimento"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="265dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/date_round"
+                    android:drawableRight="@drawable/ic_baseline_calendar_today_24"
+                    android:gravity="center"
+                    android:hint="dia/mês/ano"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/edtCpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_text_email"
+                android:hint="CPF"
+                android:inputType="phone"
+                android:maxLength="16"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                app:mask="***.***.***-**"
+                app:maskCharacter="*"
+                app:maskStyle="completable" />
+
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/edtNumeroTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_text_email"
+                android:hint="Número de Telefone"
+                app:mask="** *****-****"
+                app:maskCharacter="*"
+                app:maskStyle="completable"
+                android:inputType="phone"
+                android:textColor="@color/black"
+                android:padding="15dp"
+                android:textColorHint="@color/black" />
+            <ImageButton
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_perfil"
+                />
+
+
+
+            <!--    <ImageButton-->
+            <!--        android:id="@+id/imageButton"-->
+            <!--        android:layout_width="150dp"-->
+            <!--        android:layout_height="150dp"-->
+            <!--        android:layout_gravity="right"-->
+            <!--        android:layout_marginRight="30dp"-->
+            <!--        android:background="@drawable/ic_perfil"-->
+            <!--        tools:srcCompat="@tools:sample/avatars" />-->
+
+            <!--    <ListView-->
+            <!--        android:id="@+id/list_profissoes"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--/>-->
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/list_categorias"
+                style="@style/spinnertext"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_spinner"
+
+                android:spinnerMode="dropdown"
+                android:theme="@style/spinnertext" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <EditText
+                android:id="@+id/edt_desc_serv"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/shape_edtdesc"
+                android:hint="Descrição do serviço"
+                android:isScrollContainer="true"
+                android:maxEms="100"
+                android:overScrollMode="ifContentScrolls"
+                android:padding="10dp"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarSize="10dp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:textColorHint="@color/black"
+                android:verticalScrollbarPosition="right" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/valor_hora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/background_text_email"
+                android:hint="Valor por hora"
+                android:inputType="numberDecimal"
+
+                android:textColorHint="@color/black"
+                android:padding="15dp"
+
+
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btt_registrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background_theme_bcc"
+                android:padding="15dp"
+                android:text="Registrar"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/text_tela_login"
+                android:layout_width="match_parent"
+                android:layout_height="119dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Tem uma conta?\n Aperte aqui e faça login!"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+
+                />
+
+        </LinearLayout>
     </ScrollView>
-
-
-    <EditText
-        android:id="@+id/edit_email_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/background_text_email"
-        android:drawableRight="@drawable/ic_email"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-
-        />
-
-    <EditText
-        android:id="@+id/edit_senha_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/background_text_email"
-        android:drawableRight="@drawable/ic_vpn_key"
-        android:hint="Senha"
-        android:maxLength="15"
-        android:inputType="textPassword"
-        android:padding="15dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-
-
-        />
-
-    <com.santalu.maskara.widget.MaskEditText
-        android:id="@+id/editTextDate"
-        android:layout_width="130dp"
-        android:layout_height="50dp"
-        android:layout_gravity="right"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/date_round"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="DD/MM/AAAA"
-        android:inputType="date"
-        android:textColorHint="@color/black"
-        app:mask="  /  /    "
-        app:maskCharacter=" "
-        app:maskStyle="completable"
-        />
-
-
-    <EditText
-        android:id="@+id/edtCpf"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/background_text_email"
-        android:hint="CPF"
-        android:inputType="phone"
-        android:maxLength="11"
-        android:padding="15dp"
-        android:textColorHint="@color/black" />
-
-    <EditText
-        android:id="@+id/edtNumeroTel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/background_text_email"
-        android:hint="Número de Telefone"
-        android:inputType="phone"
-        android:padding="15dp"
-        android:maxLength="11"
-        android:textColorHint="@color/black" />
-
-
-    <!--    <ImageButton-->
-    <!--        android:id="@+id/imageButton"-->
-    <!--        android:layout_width="150dp"-->
-    <!--        android:layout_height="150dp"-->
-    <!--        android:layout_gravity="right"-->
-    <!--        android:layout_marginRight="30dp"-->
-    <!--        android:background="@drawable/ic_perfil"-->
-    <!--        tools:srcCompat="@tools:sample/avatars" />-->
-
-    <!--    <ListView-->
-    <!--        android:id="@+id/list_profissoes"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--/>-->
-
-    <ListView
-        android:id="@+id/lista_profissoes"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btt_registrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/background_theme_bcc"
-        android:padding="15dp"
-        android:text="Registrar"
-        android:textColor="@color/white"
-        />
-
-
-    <TextView
-        android:id="@+id/text_tela_login"
-        android:layout_width="match_parent"
-        android:layout_height="119dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="sans-serif-black"
-        android:gravity="center"
-        android:text="Tem uma conta?\n Aperte aqui e faça login!"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-
-        />
-
-
 </LinearLayout>
