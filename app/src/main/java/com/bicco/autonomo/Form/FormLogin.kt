@@ -30,7 +30,7 @@ class FormLogin : AppCompatActivity() {
                 try {
                     var edt_email = binding.editEmail.text.toString()
                     var edt_senha = binding.editSenha.text.toString()
-                    //Your code goes here
+
                     val Id = Biccorequests.login(
                         "https://bicco-api.herokuapp.com/login/autonomo",
                         "$edt_email",

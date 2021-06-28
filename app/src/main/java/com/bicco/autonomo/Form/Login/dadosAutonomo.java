@@ -1,5 +1,7 @@
 package com.bicco.autonomo.Form.Login;
 
+import org.jetbrains.annotations.NotNull;
+
 public class dadosAutonomo {
 
     private String nome;
@@ -119,5 +121,6 @@ public class dadosAutonomo {
     public void setAvaliacao(float avaliacao) {
         this.avaliacao = avaliacao;
     }
+
 
 }

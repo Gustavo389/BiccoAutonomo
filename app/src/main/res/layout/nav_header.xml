@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:id="@+id/menuzinho"
     android:layout_height="176dp"
     android:background="#0F5CCF"
     android:gravity="bottom"
@@ -15,9 +16,11 @@
         android:layout_height="70dp"
         android:src="@drawable/ic_perfil"/>
     <TextView
+        android:id="@+id/nome_perfil_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="6dp"
+        android:textColor="@color/white"
         android:text="Guilherme Gonçalves Ramos"
         android:textSize="15dp"
         android:textStyle="bold"/>

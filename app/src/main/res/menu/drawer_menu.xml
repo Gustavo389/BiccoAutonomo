@@ -30,9 +30,6 @@
             android:icon="@drawable/ic_notificacoes"
             android:title="Notificações" />
 
-        <item
-            android:id="@+id/nav_deslogar"
-            android:icon="@drawable/ic_deslogar"
-            android:title="Encerrar sessão" />
+
     </group>
 </menu>
