@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bicco.autonomo.Form.Login.Biccorequests
 import com.bicco.autonomo.Form.Login.Biccorequests.login
+import com.bicco.autonomo.Form.Registro.validarfields
 import com.bicco.autonomo.HomeScreen.Identificacao
 import com.bicco.autonomo.databinding.ActivityFormLoginBinding
 import com.example.abalateral.MainBcc

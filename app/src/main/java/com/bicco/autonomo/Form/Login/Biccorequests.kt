@@ -1,7 +1,5 @@
 package com.bicco.autonomo.Form.Login
 
-import android.view.LayoutInflater
-import com.bicco.autonomo.databinding.FragmentPerfilBinding
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import java.io.BufferedReader
@@ -62,7 +60,7 @@ object Biccorequests {
         nome: String?,
         email: String?,
         senha: String?,
-        datanasc: String?,
+        datanasc: String,
         cpf: String?,
         tel: String?,
         foto: String?,

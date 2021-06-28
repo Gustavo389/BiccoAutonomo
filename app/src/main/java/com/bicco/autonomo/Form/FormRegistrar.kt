@@ -3,13 +3,12 @@ package com.bicco.autonomo.Form
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.os.Looper
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.DatePicker
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.bicco.autonomo.Form.Login.Biccorequests
+import com.bicco.autonomo.Form.Registro.validarfields
 import com.bicco.autonomo.databinding.ActivityFormRegistrarBinding
 import java.util.*
 
@@ -25,12 +24,14 @@ class FormRegistrar : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     var savedMonth = 0
     var savedYear = 0
     lateinit var txtData: TextView
-    lateinit var dataNascimento: String
+    lateinit var dataNascimento : String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFormRegistrarBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        dataNascimento = ""
         var btt_register = binding.bttRegistrar
         var text_login = binding.textTelaLogin
         txtData = binding.txtDate
@@ -218,29 +219,54 @@ class FormRegistrar : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
                     println("data $dataNascimento")
                     println("categoria $categoria")
                     println("valor $valor_campo")
-                    Biccorequests.cadastrarAutonomo(
-                        "https://bicco-api.herokuapp.com/cadastrar/autonomo",
-                        nome_campo,
-                        email_campo,
-                        senha_campo,
-                        dataNascimento,
-                        cpf_campo,
-                        telefone_campo,
-                        "foto",
-                        categoria,
-                        desc_campo,
-                        0,
-                        0,
-                        0f,
-                        0F
-                    )
+                    val ListaDeCampos = ArrayList<String>()
+                    ListaDeCampos.add(nome_campo)
+                    ListaDeCampos.add(email_campo)
+                    ListaDeCampos.add(senha_campo)
+                    ListaDeCampos.add(cpf_campo)
+                    ListaDeCampos.add(telefone_campo)
+                    ListaDeCampos.add(desc_campo)
+                    ListaDeCampos.add(categoria)
+                    ListaDeCampos.add(valor_campo)
+
+
+                    val situacao = validarfields.validarCampos(ListaDeCampos)
+                    println(situacao)
+                    if (situacao == 1) {
+                        println("campos nulos")
+                        showToast("Campo Nulo")
+                    } else {
+                        println("campos OK")
+
+                        showToast("Registro feito com sucesso!")
+                        Biccorequests.cadastrarAutonomo(
+                            "https://bicco-api.herokuapp.com/cadastrar/autonomo",
+                            nome_campo,
+                            email_campo,
+                            senha_campo,
+                            dataNascimento,
+                            cpf_campo,
+                            telefone_campo,
+                            "foto",
+                            categoria,
+                            desc_campo,
+                            0,
+                            0,
+                            0f,
+                            0F
+                        )
+
+                        var intent = Intent(this, FormLogin::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
             }
 
             thread.start()
-
 
         }
 
@@ -269,7 +295,6 @@ class FormRegistrar : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     private fun pickDate() {
         val txt_data = binding.txtDate
         txt_data.setOnClickListener {
-            println("teste")
             getDateTimeCalendar()
             DatePickerDialog(this, this, year, month, day).show()
         }
@@ -305,6 +330,16 @@ class FormRegistrar : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
                 dataNascimento = txtData.text.toString()
                 println(dataNascimento)
             }
+        }
+
+    }
+    fun showToast(texto: String){
+        runOnUiThread {
+            Toast.makeText(
+                this,
+                texto,
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
     }
