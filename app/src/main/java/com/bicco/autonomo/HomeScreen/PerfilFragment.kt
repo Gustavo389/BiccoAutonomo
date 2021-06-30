@@ -1,14 +1,16 @@
 package com.example.abalateral
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.BitmapFactory
-import android.graphics.Paint
+import android.os.Build
 import android.os.Bundle
+import android.util.Base64
+import android.util.Base64.DEFAULT
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bicco.autonomo.Form.FormLogin
@@ -16,7 +18,6 @@ import com.bicco.autonomo.Form.Login.Biccorequests
 import com.bicco.autonomo.HomeScreen.Identificacao
 import com.bicco.autonomo.databinding.FragmentPerfilBinding
 import kotlinx.coroutines.*
-import kotlinx.coroutines.launch
 import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
@@ -29,6 +30,7 @@ class PerfilFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,7 +49,7 @@ class PerfilFragment : Fragment() {
         var valorPHora = binding.valorHora
         var foto_perfil = binding.fotoPerfilFrag
 
-//        decoder(Identificacao.foto, foto_perfil)
+        decoder(Identificacao.foto, foto_perfil)
 
         var editar_botao_fragment = binding.bttEditarPerfilFrag
         var tamanhoSenha = Identificacao.senha.length
@@ -101,13 +103,14 @@ class PerfilFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-//    @SuppressLint("NewApi")
-//    fun decoder(fotoemString: String, imagem: ImageView) {
-//        val baos = ByteArrayOutputStream()
-//        var imageBytes: ByteArray = baos.toByteArray()
-//        imageBytes = Base64.getDecoder().decode(fotoemString)
-//         var decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-//        imagem.setImageBitmap(decodedImage)
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun decoder(fotoemString: String, imagem: ImageView) {
+        var imageBytes: ByteArray = fotoemString.toByteArray()
+        imageBytes = Base64.decode(imageBytes,DEFAULT)
+         var decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+        imagem.setImageBitmap(decodedImage)
 //    }
+    }
 
 }

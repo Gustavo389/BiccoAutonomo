@@ -181,6 +181,7 @@ class FormRegistrar : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
             SelecionarUri = data?.data
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, SelecionarUri)
             image.setImageBitmap(bitmap)
+
             val baos = ByteArrayOutputStream()
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
             var imageBytes: ByteArray = baos.toByteArray()

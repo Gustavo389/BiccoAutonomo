@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/background_theme_bcc"
-                android:fontFamily="@font/imstorydf"
+                android:fontFamily="@font/opensansbold"
                 android:gravity="center"
                 android:text="Registro"
                 android:textAlignment="center"
