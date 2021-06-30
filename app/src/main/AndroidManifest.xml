@@ -37,12 +37,12 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             ></activity>
-        <activity android:name=".HomeScreen.TelaRecuperacao"
+        <activity
+            android:name=".HomeScreen.TelaRecuperacao"
             android:label="Recuperação de senha"
             android:theme="@style/Theme.Introduction"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"
-            ></activity>
+            tools:ignore="LockedOrientationActivity" />
 
     </application>
 

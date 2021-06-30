@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentTransaction
 import com.bicco.autonomo.Form.FormLogin
 import com.bicco.autonomo.Form.Login.Biccorequests
+import com.bicco.autonomo.HomeScreen.AnunciosFragment2
 import com.bicco.autonomo.HomeScreen.HomeFragment
 import com.bicco.autonomo.HomeScreen.Identificacao
 import com.bicco.autonomo.R
@@ -70,7 +71,7 @@ class MainBcc : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
             ).commit()
             nav_anuncios -> supportFragmentManager.beginTransaction().replace(
                 fragment_container,
-                AnunciosFragment()
+                AnunciosFragment2()
             ).commit()
             nav_assinatura -> supportFragmentManager.beginTransaction().replace(
                 fragment_container,
