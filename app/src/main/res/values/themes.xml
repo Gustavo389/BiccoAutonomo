@@ -17,7 +17,7 @@
 
     <style name="Theme.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/white</item>
-        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowBackground">@color/white</item>
 
     </style>
     <style name="Theme.Introduction" parent="Theme.MaterialComponents.DayNight.NoActionBar">

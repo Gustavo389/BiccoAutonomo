@@ -86,33 +86,6 @@ class MainBcc : AppCompatActivity(), NavigationView.OnNavigationItemSelectedList
         return true
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        //  store the menu to var when creating options menu
-        var optionsMenu = menu;
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    @SuppressLint("RestrictedApi")
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.excluir -> {
-                val policy = ThreadPolicy.Builder().permitAll().build()
-                StrictMode.setThreadPolicy(policy)
-                Biccorequests.deletar(
-                    "https://bicco-api.herokuapp.com/deletar/autonomo",
-                    Identificacao.identificacao
-                )
-                val launchNewIntent = Intent(this, FormLogin::class.java)
-                startActivityForResult(launchNewIntent, 0)
-                true
-            }
-
-
-            else -> false
-        }
-
-    }
 
     override fun onBackPressed() {
         if (drawer!!.isDrawerOpen(GravityCompat.START)) {

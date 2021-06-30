@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Splash" >
+        android:theme="@style/Theme.Introduction" >
         <activity android:name=".Form.FormRegistrar"
             android:theme="@style/Theme.Introduction"
             android:screenOrientation="portrait"
@@ -36,6 +36,12 @@
             android:theme="@style/Theme.HomeScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
+            ></activity>
+        <activity android:name=".HomeScreen.TelaRecuperacao"
+            android:label="Recuperação de senha"
+            android:theme="@style/Theme.Introduction"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
             ></activity>
 
     </application>
