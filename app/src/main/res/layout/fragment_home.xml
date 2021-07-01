@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".HomeScreen.">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -87,10 +86,10 @@
                 android:id="@+id/preco_servico1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="313dp"
-                android:layout_marginTop="119dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="28dp"
+                android:layout_marginStart="123dp"
+                android:layout_marginTop="114dp"
+                android:layout_marginEnd="198dp"
+                android:layout_marginBottom="33dp"
                 android:text="100 R$ p/hora"
                 android:textColor="@color/green"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -98,14 +97,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/txtRedirectViana"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
-                android:layout_marginTop="147dp"
 
 
+                android:layout_marginStart="238dp"
+                android:layout_marginTop="114dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
                 android:text="Entrar em contato"
                 android:textColor="@color/green"
                 android:textStyle="bold"
@@ -113,6 +114,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -426,5 +428,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -1,5 +1,7 @@
 package com.bicco.autonomo.HomeScreen
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +14,7 @@ import com.bicco.autonomo.R
 import com.bicco.autonomo.databinding.FragmentHomeBinding
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
+
 
 private lateinit var adapter: GroupAdapter<ViewHolder>
 
@@ -26,9 +29,12 @@ class HomeFragment : Fragment(){
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val binding = FragmentHomeBinding.inflate(layoutInflater)
-//        var recyclerViewHome = binding.re
-//        adapter = GroupAdapter()
-//        recyclerViewHome.adapter = adapter
+        var txtRedirect1 = binding.txtRedirectViana
+        txtRedirect1.setOnClickListener (){
+            println("print")
+        goToUrl("https://api.whatsapp.com/send?phone=5511947807168&text=Ola%20oShamell%20entrei%20em%20contato%20através%20do%20aplicativo%20BICCO%20gostaria%20de%20solicitar%20um%20orçamento")
+
+        }
         var botao1 = binding.txtRedirectViana
 
         val thread = Thread {
@@ -88,6 +94,13 @@ class HomeFragment : Fragment(){
 
 
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun goToUrl(s: String) {
+        var uri = Uri.parse(s)
+        startActivity(Intent(Intent.ACTION_VIEW, uri))
+
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
