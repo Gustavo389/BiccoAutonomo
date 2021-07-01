@@ -11,16 +11,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.bicco.autonomo.Apresentacao
 import com.bicco.autonomo.Form.FormLogin
 import com.bicco.autonomo.Form.Login.Biccorequests
 import com.bicco.autonomo.HomeScreen.Identificacao
 import com.bicco.autonomo.databinding.FragmentPerfilBinding
-import kotlinx.coroutines.*
-import java.io.ByteArrayOutputStream
+import com.bicco.autonomo.geradorDeSenha.gerador
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
-import java.util.*
 
 
 class PerfilFragment : Fragment() {
@@ -55,7 +58,7 @@ class PerfilFragment : Fragment() {
         var tamanhoSenha = Identificacao.senha.length
         val parser = SimpleDateFormat("yyyy-MM-dd")
         val formatter = SimpleDateFormat("dd.MM.yyyy")
-        val formattedDate =formatter.format(parser.parse(Identificacao.datanasc))
+        val formattedDate = formatter.format(parser.parse(Identificacao.datanasc))
 
         println("--------------------------Dentro")
         nome_fragment.setText("${Identificacao.nome}")
@@ -69,15 +72,11 @@ class PerfilFragment : Fragment() {
         valorPHora.setText("Valor por Hora: R$${Identificacao.preco} ")
         val exc = binding.bttExcluirContaPerfil
 
-        editar_botao_fragment.setOnClickListener() {
-            telefone_fragment.visibility = View.INVISIBLE
-            descricaoFragmentPerfil.visibility = View.INVISIBLE
-            valorPHora.visibility = View.INVISIBLE
-            senha_fragment.visibility = View.INVISIBLE
-            exc.visibility = View.INVISIBLE
 
-        }
+
+
         exc.setOnClickListener() {
+
             val scope = CoroutineScope(Job())
             scope.launch {
                 Biccorequests.deletar(
@@ -107,10 +106,27 @@ class PerfilFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun decoder(fotoemString: String, imagem: ImageView) {
         var imageBytes: ByteArray = fotoemString.toByteArray()
-        imageBytes = Base64.decode(imageBytes,DEFAULT)
-         var decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+        imageBytes = Base64.decode(imageBytes, DEFAULT)
+        var decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
         imagem.setImageBitmap(decodedImage)
 //    }
     }
 
+    fun janelaModal() {
+        val alert = androidx.appcompat.app.AlertDialog.Builder(this.requireContext())
+        val SenhadeRecuperacao = gerador.getRandomPass()
+        alert.setTitle("Excluir conta")
+        alert.setMessage("Tem certeza que deseja excluir sua conta");
+        alert.setPositiveButton("Já anotei meu número de recuperação de senha") { dialog, whichButton ->
+            var intent = Intent(this.context, Apresentacao::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+
+
+
+    }
 }

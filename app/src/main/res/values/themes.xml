@@ -20,8 +20,8 @@
         <item name="android:windowBackground">@color/white</item>
 
     </style>
-    <style name="Theme.Introduction" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">#337ae4</item>
+    <style name="Theme.Introduction" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">#0F5CCF</item>
     </style>
     <style name="Theme.HomeScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">#0F5CCF</item>

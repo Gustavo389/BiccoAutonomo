@@ -188,9 +188,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:backgroundTint="@color/red"
+                android:backgroundTint="#FF0000"
                 android:text="Excluir Conta"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 app:backgroundTint="#FFFFFF" />
 
         </LinearLayout>

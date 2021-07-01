@@ -125,10 +125,8 @@ class FormRegistrar : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
                     val situacao = validarfields.validarCampos(ListaDeCampos)
                     println(situacao)
                     if (situacao == 1) {
-                        println("campos nulos")
                         showToast("Campo Nulo")
                     } else {
-                        println("campos OK")
 
                         showToast("Registro feito com sucesso!")
                         Biccorequests.cadastrarAutonomo(
@@ -208,13 +206,14 @@ class FormRegistrar : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         month = cal.get(Calendar.MONTH)
         year = cal.get(Calendar.YEAR)
 
+
     }
 
     private fun pickDate() {
         val txt_data = binding.txtDate
         txt_data.setOnClickListener {
             getDateTimeCalendar()
-            DatePickerDialog(this, this, year, month, day).show()
+            DatePickerDialog(this, this, 2000, month, day).show()
         }
 
     }

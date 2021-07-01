@@ -1,13 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NOTIFICACOES"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="575dp"
+        android:background="@drawable/box_assinatura_contorno"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="292dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/tuts"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="273dp"
+            android:layout_height="117dp"
+            android:layout_marginStart="108dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/opensansbold"
+            android:text="Lancamento da versão 1.0 para o pessoal da etec de itaquera e regiao."
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="306dp"
+            android:layout_marginTop="114dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="17dp"
+            android:fontFamily="@font/opensansbold"
+            android:text="02/07/2021"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

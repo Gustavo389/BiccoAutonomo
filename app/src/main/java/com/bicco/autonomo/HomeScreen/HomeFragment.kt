@@ -1,22 +1,19 @@
 package com.bicco.autonomo.HomeScreen
 
-import android.app.AlertDialog
-import android.content.Context
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bicco.autonomo.Form.Login.Biccorequests
 import com.bicco.autonomo.Form.Login.dadosAutonomo
 import com.bicco.autonomo.R
-import com.bicco.autonomo.databinding.ActivityMainbccBinding
-import com.bicco.autonomo.databinding.NavHeaderBinding
-import com.google.android.material.navigation.NavigationView
+import com.bicco.autonomo.databinding.FragmentHomeBinding
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
 
+private lateinit var adapter: GroupAdapter<ViewHolder>
 
 class HomeFragment : Fragment(){
     override fun onCreateView(
@@ -25,9 +22,15 @@ class HomeFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         (activity as AppCompatActivity).supportActionBar?.title = "Tela Inicial"
-        return inflater.inflate(R.layout.fragment_homefragment, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val binding = FragmentHomeBinding.inflate(layoutInflater)
+//        var recyclerViewHome = binding.re
+//        adapter = GroupAdapter()
+//        recyclerViewHome.adapter = adapter
+        var botao1 = binding.txtRedirectViana
+
         val thread = Thread {
             try {
                 var idperfil = Identificacao.identificacao
@@ -48,7 +51,21 @@ class HomeFragment : Fragment(){
                     dado.pedidos = list[10].toInt()
                     dado.preco = list[11].toFloat()
                     dado.avaliacao = list[12].toFloat()
-                    Identificacao.setDados(dado.nome, dado.email,dado.senha,dado.datanasc,dado.cpf,dado.tel,dado.foto,dado.categoria,dado.descricao,dado.plano,dado.pedidos,dado.preco,dado.avaliacao)
+                    Identificacao.setDados(
+                        dado.nome,
+                        dado.email,
+                        dado.senha,
+                        dado.datanasc,
+                        dado.cpf,
+                        dado.tel,
+                        dado.foto,
+                        dado.categoria,
+                        dado.descricao,
+                        dado.plano,
+                        dado.pedidos,
+                        dado.preco,
+                        dado.avaliacao
+                    )
                     println("nome "+dado.nome)
 
 
@@ -74,7 +91,7 @@ class HomeFragment : Fragment(){
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        println("NOME"+Identificacao.nome)
+        println("NOME"+ Identificacao.nome)
 
         super.onActivityCreated(savedInstanceState)
     }

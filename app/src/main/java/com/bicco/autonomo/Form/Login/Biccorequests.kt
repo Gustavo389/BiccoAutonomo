@@ -1,6 +1,5 @@
 package com.bicco.autonomo.Form.Login
 
-import android.widget.TextView
 import com.bicco.autonomo.HomeScreen.Identificacao
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -371,6 +370,7 @@ object Biccorequests {
         }
     }
     @Throws(IOException::class, InterruptedException::class)
+
     fun numeroDeFotos(url: String?, id: Int): Int {
         val gson = GsonBuilder().create()
         val idUsuario = buscasId()
@@ -494,7 +494,8 @@ object Biccorequests {
     }
 
     @Throws(IOException::class, InterruptedException::class)
-    fun verTodosPortfolio(url: String?, id: Int) {
+    fun verTodosPortfolio(url: String?, id: Int): ArrayList<String> {
+
         val gson = GsonBuilder().create()
         val idUsuario = buscasId()
         idUsuario.id = id
@@ -515,16 +516,16 @@ object Biccorequests {
             )
         )
         val status = conn.responseCode
+        val list = arrayListOf<String>()
         if (status == HttpURLConnection.HTTP_OK) {
             val response = `in`.readLine()
             val converter = Gson()
             val resposta = converter.fromJson(response, fotosPortfolio::class.java)
             conn.disconnect()
             `in`.close()
-
             // for imprimi todas as fotos do portfolio do autonomo
             for (foto in resposta.fotos) {
-                println(foto)
+                    list.add(foto)
             }
         } else {
 
@@ -532,6 +533,7 @@ object Biccorequests {
             conn.disconnect()
             `in`.close()
         }
+        return list
     }
 
     @Throws(IOException::class)

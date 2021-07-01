@@ -18,7 +18,7 @@
         <item
             android:id="@+id/nav_anuncios"
             android:icon="@drawable/ic_anuncios"
-            android:title="Anuncios" />
+            android:title="Portfólio" />
 
         <item
             android:id="@+id/nav_assinatura"
